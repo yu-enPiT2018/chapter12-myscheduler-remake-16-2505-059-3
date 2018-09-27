@@ -77,20 +77,22 @@ class ScheduleEditActivity : AppCompatActivity() {
             }.show()
         }
     }
+
     override fun onDestroy() {
         super.onDestroy()
         realm.close()
     }
+
     fun String.toDate(pattern: String = "yyyy/MM/dd HH:mm"): java.util.Date? {
         val sdFormat = try {
             SimpleDateFormat(pattern)
-        } catch(e: IllegalArgumentException) {
+        } catch (e: IllegalArgumentException) {
             null
         }
         val date = sdFormat?.let {
             try {
                 it.parse(this)
-            } catch(e: ParseException) {
+            } catch (e: ParseException) {
                 null
             }
         }
