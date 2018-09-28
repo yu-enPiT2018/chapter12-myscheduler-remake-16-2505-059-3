@@ -20,7 +20,7 @@ class ScheduleAdapter(data: OrderedRealmCollection<Schedule>?) :
         val view: View
         val viewHolder: ViewHolder
 
-        when(convertView) {
+        when (convertView) {
             null -> {
                 val inflater = LayoutInflater.from(parent?.context)
                 view = inflater.inflate(android.R.layout.simple_list_item_2,
